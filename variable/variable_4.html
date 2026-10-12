@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>variable_4</title>
+  </head>
+  <body>
+    <script>
+      let now = new Date();
+      console.log(now);
+      let display = now.toLocaleDateString();
+      console.log(display);
+      let displayTime = now.toLocaleTimeString();
+      console.log(displayTime);
+      document.write(`<p>now time is ${displayTime}</p>`);
+      let displayEdit = now.toTimeString();
+    </script>
+  </body>
+</html>

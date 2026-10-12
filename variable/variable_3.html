@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>variable_3</title>
+    <style>
+      span {
+        font-weight: bold;
+        padding: 0 5px;
+      }
+      .banana {
+        color: #fbff00;
+      }
+      .apple {
+        color: #ff3300;
+      }
+      .mango {
+        color: #ff7b00;
+      }
+      .total {
+        color: #217017;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 1. banana 변수선언하고 금액을 할당하세요.
+      // 2. apple 변수선언하고 금액을 할당하세요.
+      // 3. mango 변수선언하고 금액을 할당하세요.
+      // 4.  total변수 선언하고 banana apple mango 다 더한 식을 할당하세요
+      // 화면에 바나나 사과 망고를 다 더한 금액은 ... 입니다.
+      let banana = 1000;
+      let apple = 1500;
+      let mango = 3000;
+      let total = banana + apple + mango;
+      document.write(
+        `<p>
+          <span class="banana">바나나</span>
+          <span class="apple">사과</span>
+          <span class="mango">망고</span>
+          를 다 더한 금액은 <span class="total">${total.toLocaleString()}</span>원 입니다.
+        </p>`,
+      );
+      console.log(total.toLocaleString());
+    </script>
+  </body>
+</html>
