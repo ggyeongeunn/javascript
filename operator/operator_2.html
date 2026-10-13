@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>operator_2</title>
+  </head>
+  <body>
+    <button id="btn">click +</button>
+    <p class="counter">counter = 0</p>
+    <script>
+      let clickBtn = document.querySelector("#btn");
+      let counter = document.querySelector(".counter");
+
+      // console.log(clickBtn);
+      // console.log(counter);
+      let count = 0;
+      clickBtn.addEventListener("click", function () {
+        count++;
+        // counter.textContent = "counter = " + count;
+        counter.textContent = `counter = ${count}`;
+      });
+    </script>
+  </body>
+</html>

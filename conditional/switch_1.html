@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swich</title>
+  </head>
+  <body>
+    <script>
+      let score = prompt("insert score");
+      let grade = true;
+      switch (grade) {
+        case score >= 90:
+          grade = "A";
+          break;
+        case score >= 80:
+          grade = "B";
+          break;
+        case score >= 70:
+          grade = "C";
+          break;
+        case score >= 60:
+          grade = "D";
+          break;
+        default:
+          grade = "F";
+      }
+      document.write(`your score is ${grade}`);
+    </script>
+  </body>
+</html>

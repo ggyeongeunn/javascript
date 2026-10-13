@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if else</title>
+  </head>
+  <body>
+    <button id="loginBtn">login</button>
+    <p id="text">now logout</p>
+    <button id="like">🤍</button>
+    <script>
+      const btn = document.querySelector("#loginBtn");
+      const loginText = document.querySelector("#text");
+      let isLogin = false;
+
+      btn.addEventListener("click", function () {
+        isLogin = !isLogin;
+        if (isLogin) {
+          // isLogin = false;
+          btn.textContent = "logout";
+          loginText.textContent = "now login";
+        } else {
+          // isLogin = true;
+          btn.textContent = "login";
+          loginText.textContent = "now logout";
+        }
+      });
+
+      const like = document.querySelector("#like");
+      let isLike = false;
+      // like.addEventListener("click", function () {
+      //   if (isLike) {
+      //     isLike = false;
+      //     like.textContent = "🤍";
+      //   } else {
+      //     isLike = true;
+      //     like.textContent = "💕";
+      //   }
+      // });
+      like.addEventListener("click", () => {
+        isLike = !isLike;
+        if (isLike) {
+          // isLike = false;
+          like.textContent = "💕";
+        } else {
+          // isLike = true;
+          like.textContent = "🤍";
+        }
+      });
+    </script>
+  </body>
+</html>

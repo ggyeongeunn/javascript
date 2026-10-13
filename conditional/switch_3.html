@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch_3</title>
+    <style>
+      body {
+        background-color: #f2fff5;
+        color: #454545;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p>마케팅 세션은 <strong>101호</strong> 에서 진행됩니다.</p> -->
+    <script>
+      let session = prompt(
+        "관심 세션을 선택해주세요. 1-마케팅,2-개발,3-디자인",
+        "1,2,3중에 고르세요",
+      );
+      switch (session) {
+        case "1":
+          document.write(
+            `<p>마케팅 세션은 <strong>101호</strong> 에서 진행됩니다.</p>`,
+          );
+          document.body.style.backgroundColor = "#f2f7ff";
+          break;
+        case "2":
+          document.write(
+            `<p>개발 세션은 <strong>201호</strong> 에서 진행됩니다.</p>`,
+          );
+          document.body.style.backgroundColor = "#f3fff2";
+          break;
+        case "3":
+          document.write(
+            `<p>디자인 세션은 <strong>301호</strong> 에서 진행됩니다.</p>`,
+          );
+          document.body.style.backgroundColor = "#fff6f2";
+          break;
+        default:
+          document.write(
+            `<p>잘못 입력하셨습니다. 1,2,3 중에서 입력해주세요.</p>`,
+          );
+      }
+    </script>
+  </body>
+</html>
