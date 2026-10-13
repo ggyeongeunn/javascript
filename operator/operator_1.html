@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>operator_1</title>
+  </head>
+  <body>
+    <script>
+      // 계산하거나 비교할 때 쓰는 기호
+      // 산술 연산자 : 계산할 때 사용
+      let a = 10;
+      let b = 3;
+      console.log("a + b = " + (a + b));
+      console.log(a + b);
+      console.log(a - b);
+      console.log(a * b);
+      console.log(a / b);
+      console.log(a % b);
+      console.log("===================================================");
+
+      // 비교 연산자 : 참/거짓 판별
+      console.log("5 > 3 is " + (5 > 3)); // true
+      console.log("5 < 3 is " + (5 < 3)); // false
+      console.log("5 == 3 is " + (5 == 3)); // false
+      console.log("5 === '5' is " + (5 === "5")); // false
+      console.log("5 != 3 is " + (5 != 3)); //true
+
+      // 논리 연산자 : 조건이 여러개일 때
+      let age = 20;
+      console.log("age > 18 && age < 30 is " + (age > 18 && age < 30)); // true 모든 조건이 다 참이어야 true
+      console.log("age > 18 || age < 30 is " + (age > 18 || age < 30)); // true 하나만 참이어도 true
+      let isLogin = true;
+      console.log(!isLogin); // ! is not
+
+      // 증가/감소 연산자
+      let count = 5;
+      count++; // 증가
+      count--; // 감소
+      console.log(count);
+    </script>
+  </body>
+</html>
