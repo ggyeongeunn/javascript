@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach</title>
+  </head>
+  <body>
+    <script>
+      const fruits = [
+        "apple",
+        "banana",
+        "orange",
+        "mango",
+        "peach",
+        "graph",
+        "watermelon",
+      ];
+      fruits.forEach((fruit, i) => {
+        console.log(fruit);
+        console.log(i);
+        document.writeln(`<p>${i + 1}. ${fruit}</p>`);
+      });
+    </script>
+  </body>
+</html>

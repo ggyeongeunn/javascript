@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string object</title>
+  </head>
+  <body>
+    <script>
+      // 1. length
+      const str = "Lorem ipsum dolor sit amet.";
+      console.log(str.length); // 길이
+
+      // 2. toUpperCase() toLowerCase()
+      console.log(str.toLocaleUpperCase());
+      console.log(str.toLocaleLowerCase());
+
+      // 3. includes() 포함 여부 확인
+      const mail = "username@gmail.com";
+      console.log(mail.includes("@"));
+      console.log(mail.includes("#"));
+
+      // 4. trim() 공백 제거
+      const input = " Lorem ipsum dolor sit amet. ";
+      console.log(input);
+      console.log(input.length);
+      console.log(input.trim());
+      console.log(input.trim().length);
+
+      // 5. slice()
+      const str2 = "JavaScript";
+      console.log(str2.slice(4, 10));
+
+      // 6. replace()
+      const sentence = "I Like Java";
+      console.log(sentence);
+      console.log(sentence.replace("Java", "JavaScript"));
+
+      // 7. split()
+      const data = "apple, banana, orange";
+      console.log(data.split(""));
+    </script>
+  </body>
+</html>

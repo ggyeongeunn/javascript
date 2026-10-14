@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>date object</title>
+  </head>
+  <body>
+    <p>현재 시각 : <span class="display"></span></p>
+    <!--  -->
+    <script>
+      function displayNow() {
+        const now = new Date();
+        const currentTime = now.toLocaleTimeString();
+        const display = document.querySelector(".display");
+
+        // text.textContent = `${currentTime}`;
+        display.innerHTML = `${currentTime}`;
+      }
+      setInterval(displayNow, 1000);
+
+      // setInterval(function displayNow() {
+      //   const now = new Date();
+      //   const currentTime = now.toLocaleTimeString();
+      //   const display = document.querySelector(".display");
+
+      //   // text.textContent = `${currentTime}`;
+      //   display.innerHTML = `${currentTime}`;
+      // }, 1000);
+    </script>
+  </body>
+</html>

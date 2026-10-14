@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      // Array 여러 데이터를 순서대로 관리
+      const arr = [1, 2, 3, 4, 5];
+      console.log(arr);
+      console.log(arr.length); // 길이
+
+      arr.push(6); //  배열 끝 요소를 추가
+      console.log(arr);
+
+      arr.pop(); //  배열 끝 요소를 제거
+      console.log(arr);
+
+      arr.shift(); //  배열 첫 요소 제거
+      console.log(arr);
+
+      arr.unshift(10); //  배열 앞 요소 추가
+      console.log(arr);
+
+      console.log(arr.indexOf(3)); //  해당 요소의 index 값 (없으면 -1)
+
+      console.log(arr.slice(2, 4)); // 해당 index 값의 구간만큼 자름 slice(시작인덱스(포함), 끝인덱스(미포함))
+
+      arr.splice(1, 1, 44, 50, 100); //  배열 요소 추가 삭제 splice(시작 인덱스(어디서 부터), 삭제개수 , 추가할 값1, 추가할 값2, ...)
+      console.log(arr);
+
+      console.log(arr.join(" *** "));
+
+      arr.forEach((e) => {
+        console.log(e);
+        document.write(`<p>${e}</p>`);
+      }); //  각 요소에 대해 함수 실행
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach_1</title>
+  </head>
+  <body>
+    <ul id="fruitList"></ul>
+    <script>
+      const fruits = [
+        "사과",
+        "바나나",
+        "포도",
+        "망고",
+        "수박",
+        "사과",
+        "바나나",
+        "포도",
+        "망고",
+        "수박",
+        "사과",
+        "바나나",
+        "포도",
+        "망고",
+        "수박",
+      ];
+      const list = document.querySelector("#fruitList");
+
+      fruits.forEach((item, index) => {
+        list.innerHTML += `<li>${index + 1}. ${item}</li>`;
+
+        // createElement 사용
+        // const li = document.createElement("li");
+        // li.textContent = `${index + 1}. ${item}`;
+        // list.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
