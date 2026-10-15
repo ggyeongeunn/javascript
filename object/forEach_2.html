@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      ul {
+        width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #eee;
+      }
+      ul li {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #cdd1d5;
+        position: relative;
+        overflow: hidden;
+      }
+      ul .img {
+        width: 100%;
+        overflow: hidden;
+      }
+      ul .img img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 0.8;
+        object-fit: cover;
+        transition: 0.2s;
+      }
+      ul .img:hover img {
+        transform: scale(1.05);
+      }
+      ul li h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #666;
+      }
+      .desc {
+        padding: 10px 20px 20px;
+        background-color: #f4f5f6;
+      }
+      .price {
+        margin: 20px 0 10px;
+        font-size: 15px;
+        color: #666;
+      }
+      ul li span {
+        font-size: 14px;
+        color: #a0a0a0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="productList">
+      <!-- js print -->
+    </ul>
+    <script>
+      const proList = document.querySelector("#productList");
+      const products = [
+        {
+          name: "shirt",
+          price: 15000,
+          desc: "white shirt",
+          imgUrl: "images/tshirt.jpg",
+        },
+        {
+          name: "jean",
+          price: 25000,
+          desc: "indigo jean",
+          imgUrl: "images/jeans.jpg",
+        },
+        {
+          name: "snikers",
+          price: 45000,
+          desc: "gray snikers",
+          imgUrl: "images/shoes.jpg",
+        },
+      ];
+      products.forEach((item, index) => {
+
+        proList.innerHTML += `<li>
+          <div class="img">
+            <img src=${item.imgUrl} alt="image" />
+          </div>
+          <div class="desc">
+            <h3>${item.name}</h3>
+            <p class="price">price : ${item.price}원</p>
+            <span>${item.desc}</span>  
+          </div>
+        </li>`;
+      });
+    </script>
+  </body>
+</html>
