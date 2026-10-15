@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <script>
+      //  함수 : 동작해야 할 기능을 묶은 명령
+      //  alert() 자바스크립트에 포함되어 있는 여러 함수 중 하나 => 내장함수
+      //  내가 만드는 함수
+
+      //  두 수를 더하는 함수
+      function addNum(a, b, c) {
+        // a, b, c => 매개변수 : 함수가 값을 전달하는 변수
+        // 실행 코드
+        let sum = a + b + c;
+        document.write(`a + b + c = ${sum} <br>`);
+      }
+      addNum(1, 10, 50);
+      addNum(50, 20, 25);
+      addNum(30, 30, 60);
+      addNum()  // NaN (매개변수는 undefined)
+    </script>
+  </body>
+</html>

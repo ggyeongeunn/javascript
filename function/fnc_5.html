@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_5</title>
+  </head>
+  <body>
+    <button id="menuBtn1" class="menu">menu 1</button>
+    <button id="menuBtn2" class="menu">menu 2</button>
+    <button id="menuBtn3" class="menu">menu 3</button>
+    <div id="menu1" class="menu-cnt" style="display: none">menu content 1</div>
+    <div id="menu2" class="menu-cnt" style="display: none">menu content 2</div>
+    <div id="menu3" class="menu-cnt" style="display: none">menu content 3</div>
+    <script>
+      // function
+      function toggleMenu(id) {
+        let menu = document.getElementById(id);
+        console.log(menu);
+
+        if (menu.style.display === "none") {
+          menu.style.display = "block";
+        } else {
+          menu.style.display = "none";
+        }
+      }
+      // const
+      const menuBtn1 = document.getElementById("menuBtn1");
+      const menuBtn2 = document.getElementById("menuBtn2");
+      const menuBtn3 = document.getElementById("menuBtn3");
+
+      // click event
+      menuBtn1.addEventListener("click", () => {
+        toggleMenu("menu1");
+      });
+      menuBtn2.addEventListener("click", () => {
+        toggleMenu("menu2");
+      });
+      menuBtn3.addEventListener("click", () => {
+        toggleMenu("menu3");
+      });
+    </script>
+  </body>
+</html>

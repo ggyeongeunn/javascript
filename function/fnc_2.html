@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_2</title>
+  </head>
+  <body>
+    <button id="colorBtn">color Change</button>
+    <script>
+      function colorChange() {
+        document.body.style.backgroundColor = "#ddd";
+      }
+
+      const colorBtn = document.querySelector("#colorBtn");
+      colorBtn.addEventListener("click", () => {
+        colorChange();
+      });
+      colorBtn.addEventListener("click", colorChange);
+    </script>
+  </body>
+</html>

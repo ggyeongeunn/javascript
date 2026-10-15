@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_6</title>
+    <style>
+      .submenu {
+        display: none;
+      }
+      .submenu.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu">menu 1</button>
+    <ul class="submenu">
+      <li>submenu 1</li>
+      <li>submenu 2</li>
+    </ul>
+    <script>
+      const menu = document.querySelector(".menu");
+      const subMenu = document.querySelector(".submenu");
+
+      menu.addEventListener("click", function () {
+        subMenu.classList.toggle("active");
+        // if (subMenu.classList.contains("active")) {
+        //   subMenu.classList.remove("active");
+        // } else {
+        //   subMenu.classList.add("active");
+        // }
+      });
+    </script>
+  </body>
+</html>

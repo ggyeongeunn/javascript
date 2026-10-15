@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_1</title>
+  </head>
+  <body>
+    <button onclick="clickEvent()">click</button>
+    <button onclick="alert()">alert</button>
+    <br />
+    <script>
+      function clickEvent() {
+        console.log("say Hi");
+      }
+
+      // addEventListener
+      // const btn = document.querySelectorAll("button");
+      // btn.addEventListener("click", () => {
+      //   console.log("click");
+      // });
+
+      // querySelectorAll => forEach문
+      // btn.forEach((ele, i) => {
+      //   ele.addEventListener("click", () => {
+      //     console.log("hi" + i);
+      //   });
+      // });
+
+      function greet(username, age, adress) {
+        console.log("hello");
+        document.write(
+          `${username}님 나이는 ${age} 살이고, 사는 동네는 ${adress}입니다.<br>`,
+        );
+      }
+      greet("홍길동", 20, "동구");
+      greet("김철수", 45, "수성구");
+    </script>
+  </body>
+</html>

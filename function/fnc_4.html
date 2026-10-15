@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_4</title>
+  </head>
+  <body>
+    <input type="text" id="nameInput" placeholder="insert name" />
+    <button id="showBtn">ok</button>
+    <p id="result"></p>
+    <script>
+      const nameVal = document.querySelector("#nameInput");
+      const showBtn = document.querySelector("#showBtn");
+      const result = document.querySelector("#result");
+
+      function showName(name) {
+        result.textContent = `안녕하세요, ${name}님! 반갑습니다.`;
+      }
+
+      showBtn.addEventListener("click", () => {
+        let userName = nameVal.value;
+        showName(userName);
+        // input reset
+        nameVal.value = "";
+      });
+    </script>
+  </body>
+</html>

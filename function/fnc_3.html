@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_3</title>
+  </head>
+  <body>
+    <button onclick="changeColor('skyblue')" id="skyBtn">skyblue</button>
+    <button onclick="changeColor('pink')" id="pinkBtn">pink</button>
+    <button onclick="changeColor('yellow')" id="yellowBtn">yellow</button>
+    <button onclick="changeColor('blue')" id="blueBtn">blue</button>
+    <script>
+      // const skyBtn = document.querySelector("#skyBtn");
+      // const pinkBtn = document.querySelector("#pinkBtn");
+      // const yellowBtn = document.querySelector("#yellowBtn");
+      // const blueBtn = document.querySelector("#blueBtn");
+
+      function changeColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+      // skyBtn.addEventListener("click", () => {
+      //   changeColor("skyblue");
+      // });
+      // pinkBtn.addEventListener("click", () => {
+      //   changeColor("pink");
+      // });
+      // yellowBtn.addEventListener("click", () => {
+      //   changeColor("yellow");
+      // });
+      // blueBtn.addEventListener("click", () => {
+      //   changeColor("blue");
+      // });
+    </script>
+  </body>
+</html>
