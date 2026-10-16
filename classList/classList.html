@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classList</title>
+    <style>
+      .box {
+        width: 300px;
+        padding: 30px;
+        margin-bottom: 20px;
+        background-color: #eee;
+      }
+      .red {
+        background-color: #c73333;
+        color: #f4f5f6;
+      }
+      .blue {
+        background-color: #1e5499;
+        color: #f4f5f6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="myBox">hello</div>
+    <button id="addBtn">add red</button>
+    <button id="removeBtn">remove red</button>
+    <button id="toggleBtn">toggle blue</button>
+    <button id="chkBtn">check red</button>
+    <script>
+      const addBtn = document.querySelector("#addBtn");
+      const removeBtn = document.querySelector("#removeBtn");
+      const toggleBtn = document.querySelector("#toggleBtn");
+      const chkBtn = document.querySelector("#chkBtn");
+      const box = document.querySelector("#myBox");
+
+      addBtn.addEventListener("click", () => {
+        box.classList.add("red");
+        // box.classList.remove("blue");
+      });
+      removeBtn.addEventListener("click", () => {
+        box.classList.remove("red");
+      });
+      toggleBtn.addEventListener("click", () => {
+        box.classList.toggle("blue");
+        box.classList.remove("red");
+      });
+      chkBtn.addEventListener("click", () => {
+        if (box.classList.contains("red")) {
+          box.classList.remove("red");
+        } else {
+          box.classList.add("red");
+        }
+      });
+    </script>
+  </body>
+</html>

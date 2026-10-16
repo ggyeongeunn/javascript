@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toggle button</title>
+    <style>
+      .contain {
+        width: 300px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: #fdf4ff;
+        box-shadow: 0 0 10px #fcefff;
+        border-radius: 10px;
+        position: relative;
+      }
+      .contain img {
+        width: 100%;
+      }
+      .contain button {
+        padding: 5px 20px;
+        position: absolute;
+        right: 30px;
+        bottom: 35px;
+        z-index: 9;
+        font-size: 14px;
+        border: 1px solid #cdd1d5;
+        border-radius: 20px;
+        background-color: #fafafa;
+        color: #808080;
+        cursor: pointer;
+      }
+      .contain button.on {
+        right: 20px;
+        bottom: 20px;
+      }
+      .contain .desc {
+        display: none;
+        transition: 0.2s;
+      }
+      .contain .desc h3 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #454545;
+      }
+      .contain .desc p {
+        margin: 0;
+        font-size: 15px;
+        color: #666;
+        margin-bottom: 40px;
+      }
+      .contain .desc.on {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <img src="flower.jpg" alt="flower" />
+      <button>view more</button>
+      <div class="desc">
+        <h3>Lorem</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
+          necessitatibus ea vel voluptatum modi illum ad at recusandae dolore
+          voluptatem!
+        </p>
+      </div>
+    </div>
+    <script>
+      //defer 안 적었을 때
+      // window.addEventListener("load", () => {
+      //  코드
+      // });
+
+      const btn = document.querySelector("button");
+      const desc = document.querySelector(".desc");
+
+      btn.addEventListener("click", () => {
+        desc.classList.toggle("on");
+        btn.classList.toggle("on");
+        if (btn.classList.contains("on")) {
+          btn.textContent = "close";
+        } else {
+          btn.textContent = "view more";
+        }
+      });
+    </script>
+  </body>
+</html>

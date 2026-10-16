@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        margin: 20px 0;
+        width: 100px;
+        height: 100px;
+        background-color: #ddd;
+        transition: 0.2s;
+      }
+      .box.active {
+        width: 200px;
+        height: 200px;
+        background-color: #aaa;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- event connect -->
+    <button id="btn">press</button>
+    <!-- input event -->
+    <input type="text" id="inputName" placeholder="insert name" />
+    <!-- form submit event -->
+    <form id="myForm">
+      <input type="text" id="userMail" placeholder="insert email" />
+      <button type="submit">submit</button>
+    </form>
+    <!-- mouseover event -->
+    <div class="box"></div>
+    <!-- keyboard event -->
+    <input type="text" id="keyInput" placeholder="press key" />
+    <script>
+      // event connect
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", () => {
+        console.log("click");
+        btn.style.color = "red";
+      });
+      const userName = document.querySelector("#inputName");
+      userName.addEventListener("input", () => {
+        console.log(userName.value);
+      });
+
+      // form submit event
+      const form = document.querySelector("#myForm");
+      const mail = document.querySelector("#userMail");
+
+      form.addEventListener("submit", (e) => {
+        console.log(e);
+        // 이벤트 막기
+        e.preventDefault();
+        document.write(`${mail.value}`);
+        console.log(mail.value + " 메일 폼이 제출되었습니다.");
+      });
+
+      // mouseover event
+      const box = document.querySelector(".box");
+      box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "#aaa";
+      });
+      box.addEventListener("mouseout", () => {
+        box.style.backgroundColor = "#ddd";
+      });
+
+      // keyboard event
+      const keyInput = document.querySelector("#keyInput");
+      keyInput.addEventListener("keydown", (e) => {
+        console.log(e.key);
+      });
+      // page load
+      window.addEventListener("load", () => {
+        console.log("page load complete");
+      });
+      // window resize
+      window.addEventListener("resize", () => {
+        // window > 600
+        if (window.innerWidth < 600) {
+          box.classList.add("active");
+        } else {
+          box.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

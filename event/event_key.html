@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+        background-color: #9abaff;
+        box-sizing: border-box;
+        transition: 0.5s;
+      }
+      .box1.active {
+        background-color: #39a723;
+      }
+      .box2.active {
+        background-color: #ff660e;
+      }
+      .box3.active {
+        background-color: #123b79;
+      }
+      .box4.active {
+        background-color: #ffe200;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>keyUp Event</h1>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <script>
+      const box1 = document.querySelector(".box1");
+      const box2 = document.querySelector(".box2");
+      const box3 = document.querySelector(".box3");
+      const box4 = document.querySelector(".box4");
+      document.body.addEventListener("keyup", (e) => {
+        let keyCode = e.key.toLocaleLowerCase();
+        console.log(keyCode);
+
+        // if (keyCode === "enter") {
+        //   box1.classList.toggle("active");
+        // } else if (keyCode === "backspace") {
+        //   box2.classList.toggle("active");
+        // } else if (keyCode === "shift") {
+        //   box3.classList.toggle("active");
+        // } else if (keyCode === "/") {
+        //   box4.classList.toggle("active");
+        // }
+
+        let box = null;
+        if (keyCode === "arrowup") {
+          box = document.querySelector(".box1");
+        } else if (keyCode === "arrowdown") {
+          box = document.querySelector(".box2");
+        } else if (keyCode === "arrowleft") {
+          box = document.querySelector(".box3");
+        } else if (keyCode === "arrowright") {
+          box = document.querySelector(".box4");
+        }
+        console.log(box)
+        if (box != null) {
+          box.classList.toggle("active");
+        }
+      });
+    </script>
+  </body>
+</html>
