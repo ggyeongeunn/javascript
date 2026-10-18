@@ -1,2 +1,1 @@
 # javascript
-# individual_practice
