@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom</title>
+  </head>
+  <body>
+    <button onclick="innerTxt()">innerText</button>
+    <button onclick="innerHm()">innerHTML</button>
+    <h1>now :</h1>
+    <div id="current"></div>
+    <script>
+      // const curr = document.querySelector("#current");
+      const curr = document.getElementById("current");
+      const now = new Date();
+      function innerTxt() {
+        // curr.innerText = now.toLocaleString();
+        curr.innerText = `<strong>${now.toLocaleString()}</strong>`;
+      }
+      function innerHm() {
+        // tag 사용 가능
+        // curr.innerHTML = now.toLocaleString();
+        curr.innerHTML = `<strong>${now.toLocaleString()}</strong>`;
+      }
+    </script>
+  </body>
+</html>

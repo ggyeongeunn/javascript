@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event change</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      input[type="checkbox"] {
+        margin: 0 10px;
+      }
+      .todo {
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .todo.completed {
+        text-decoration: line-through;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>to do list</h2>
+    <ul>
+      <li class="todo"><input type="checkbox" />clean room</li>
+      <li class="todo"><input type="checkbox" />go to market</li>
+      <li class="todo"><input type="checkbox" />exercise</li>
+      <li class="todo"><input type="checkbox" />study javascript</li>
+    </ul>
+    <script>
+      const todos = document.querySelectorAll(".todo");
+      console.log(todos); // NodeList
+      todos.forEach((todo, index) => {
+        // console.log(todo, index)
+        const chkBox = todo.querySelector("input");
+        console.log(chkBox);
+        chkBox.addEventListener("change", () => {
+          // console.log(chkBox.checked); // true, false value
+          if (chkBox.checked) {
+            todo.classList.add("completed");
+          } else {
+            todo.classList.remove("completed");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

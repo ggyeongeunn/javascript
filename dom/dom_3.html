@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- add property / edit property -->
+    <a href="https://naver.com">naver</a>
+    <script>
+      //  get property method
+      //  basic : getAttribute('propertyName')
+      const aEl = document.querySelector("a");
+      console.log(aEl);
+      const hrefE = aEl.getAttribute("href");
+      console.log(hrefE);
+      //  change property method
+      //  basic : setAttribute('properyName', "changeValue")
+      aEl.setAttribute("href", "https://google.co.kr");
+      console.log(aEl);
+      aEl.innerText = "google";
+      aEl.setAttribute("target", "_blank");
+      aEl.setAttribute("title", "move google");
+      aEl.setAttribute("class", "link");
+      aEl.setAttribute("id", "linkUrl");
+    </script>
+  </body>
+</html>

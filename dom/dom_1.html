@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom - add element</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>web programming</h1>
+      <!-- add p -->
+      <!-- it is text node -->
+    </div>
+    <div class="notice">
+      <!-- span tag text hello -->
+    </div>
+    <script>
+      // createElement() add element method
+      const newP = document.createElement("p");
+      console.log(newP);
+
+      // createTextNode() add text method
+      const txtNode = document.createTextNode("DOM is document object model");
+      console.log(txtNode);
+
+      // appendChild() add child element method
+      newP.appendChild(txtNode);
+      console.log(newP);
+
+      document.querySelector("#container").appendChild(newP);
+
+      // =========================================================
+      // add span tag
+      const newSpan = document.createElement("span");
+      const spanTxt = document.createTextNode("hello");
+      newSpan.appendChild(spanTxt);
+      document.querySelector(".notice").appendChild(newSpan);
+    </script>
+  </body>
+</html>
