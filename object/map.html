@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map()</title>
+  </head>
+  <body>
+    <!-- map() : 기존 데이터를 하나씩 꺼내서 다른 데이터로 바꾸고, 새로운 배열로 만드는 메서드 -->
+    <script>
+      const prices = [1000, 2000, 3000];
+      console.log(prices);
+
+      const newPrices = prices.map((price) => {
+        console.log(price);
+        return price + 1000;
+      });
+      // 돌려받은 값들을 모아서 새 배열로 만듦.
+      console.log(newPrices);
+
+      const nums = [1, 2, 3, 4];
+      // const result = nums.map((num) => {
+      //   return num + 2;
+      // });
+      const result = nums.map((num) => num * 2);  // 화살표 함수 간단 표현(return 생략)
+      console.log(result);
+    </script>
+  </body>
+</html>

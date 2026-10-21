@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach() map() filter() product management</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #454545;
+      }
+      body {
+        padding: 20px;
+      }
+      h1 {
+        margin-bottom: 30px;
+      }
+      button {
+        border: none;
+        background-color: #333;
+        color: #f4f5f6;
+        padding: 10px 20px;
+        border-radius: 6px;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #101010;
+      }
+      .product-list {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+      .card {
+        width: calc(50% - 10px);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #cdd1d5;
+        background-color: #fbfdff;
+        border-radius: 8px;
+      }
+      .card h3 {
+        margin-bottom: 50px;
+      }
+      .card p {
+        font-size: 15px;
+      }
+      .price,
+      .saled {
+        text-align: right;
+      }
+      .saled {
+        font-weight: bold;
+      }
+      .price.canceled {
+        font-size: 13px;
+        text-decoration: line-through;
+        color: #a0a0a0;
+      }
+      @media (max-width: 480px) {
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>쇼핑몰</h1>
+    <button id="allBtn">전체 상품</button>
+    <button id="saleBtn">세일 가격</button>
+    <button id="filterBtn">50,000원 이하</button>
+    <p id="count"></p>
+    <div id="productList" class="product-list"></div>
+    <script>
+      // product data
+      const products = [
+        { id: 1, name: "티셔츠", price: 20000, category: "의류" },
+        { id: 2, name: "청바지", price: 45000, category: "의류" },
+        { id: 3, name: "운동화", price: 80000, category: "신발" },
+        { id: 4, name: "모자", price: 15000, category: "잡화" },
+      ];
+
+      // get HTML element
+      const productList = document.querySelector("#productList");
+      const count = document.querySelector("#count");
+      const allBtn = document.querySelector("#allBtn");
+      const saleBtn = document.querySelector("#saleBtn");
+      const filterBtn = document.querySelector("#filterBtn");
+
+      // print product function
+      function renderProducts(items) {
+        productList.innerHTML = "";
+        items.forEach((product) => {
+          // console.log(product);
+          productList.innerHTML += `
+          <div class="card">
+            <h3>${product.name}</h3>
+            <p>${product.category}</p>
+            <p class="price">${product.price.toLocaleString()}원</p>
+          </div>`;
+        });
+      }
+
+      // map() 모든 상품 가격을 10% 할인한 새 배열 공통함수
+      function showSaleProducts() {
+        productList.innerHTML = "";
+        const saleProduct = products.map((product) => {
+          // const saled = product.price * 0.9;
+          // productList.innerHTML += `
+          // <div class="card">
+          //   <h3>${product.name}</h3>
+          //   <p>${product.category}</p>
+          //   <p class="price canceled">${product.price.toLocaleString()}원</p>
+          //   <p class="saled">${saled.toLocaleString()}원</p>
+          // </div>`;
+          return {
+            ...product, // array 복사
+            price: product.price * 0.9,
+          };
+        });
+        renderProducts(saleProduct);
+      }
+
+      // filter() 5만원 이하 상품 골라서 새 배열 만들기
+      function showCheapProducts() {
+        productList.innerHTML = "";
+        const cheapProducts = products.filter((product) => {
+          return product.price <= 50000;
+        });
+        renderProducts(cheapProducts);
+      }
+      renderProducts(products);
+      // renderProducts()
+      // forEach() 전체상품 출력
+      allBtn.addEventListener("click", () => {
+        renderProducts(products);
+      });
+      // map() 할인 적용
+      saleBtn.addEventListener("click", showSaleProducts);
+      // filter() 5만원 이하
+      filterBtn.addEventListener("click", showCheapProducts);
+    </script>
+  </body>
+</html>
