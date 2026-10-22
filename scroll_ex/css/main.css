@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: #f4f5f6;
+  scroll-behavior: smooth;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+}
+#home {
+  background-color: #104799;
+}
+#about {
+  background-color: #615743;
+}
+#skills {
+  background-color: #185a11;
+}
+#project {
+  background-color: #412b70;
+}
+#contact {
+  background-color: #702525;
+}
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  z-index: 9;
+  background-color: #f4f5f680;
+  padding: 16px 12px;
+  border-radius: 16px 16px 0;
+  transform: translateY(-50%);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 10px #a0a0a040;
+}
+.dot {
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  padding: 6px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.dot.on,
+.dot:hover {
+  background-color: #fafcffc0;
+}

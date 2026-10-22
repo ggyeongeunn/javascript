@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- for 반복문 : 같은 코드를 여러 번 실행할 때 사용하는 반복문 -->
+    <script>
+      // for 기본형 (시작; 조건; 증가)
+      for (let i = 0; i < 5; i++) {
+        // console.log(i);
+      }
+      for (let i = 1; i <= 10; i++) {
+        // console.log(i);
+      }
+      let sum = 0;
+      for (let i = 1; i <= 10; i++) {
+        sum += i;
+      }
+      // document.write("all i = " + sum);
+      for (let i = 1; i <= 5; i++) {
+        document.write(`hi ${i} bye<br/>`);
+      }
+      for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 0) {
+          document.write(`${i} (even) <br/>`);
+        }
+      }
+      for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 1) {
+          document.write(`${i} (odd) <br/>`);
+        }
+      }
+      for (let i = 1; i <= 5; i++) {
+        document.write(`${"⭐".repeat(i)}<br>`);
+      }
+      document.write("⭐".repeat(5));
+    </script>
+  </body>
+</html>

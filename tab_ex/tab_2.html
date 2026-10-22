@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tab</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #454545;
+        text-decoration: none;
+        list-style: none;
+      }
+      .wrap {
+        width: 100%;
+        max-width: 800px;
+        margin: 100px auto;
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+      }
+      .menu-item {
+        flex: 1;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 10px 20px;
+        border: 1px solid #cdd1d5;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .menu-item:not(:first-of-type) {
+        margin-left: -1px;
+      }
+      .menu-item:hover,
+      .menu-item.on {
+        background-color: #666;
+        color: #f4f5f6;
+      }
+      .card-container {
+        padding: 20px 10px;
+        margin-top: -1px;
+        border: 1px solid #cdd1d5;
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        display: none;
+      }
+      .card.on {
+        display: flex;
+      }
+      .card li {
+        flex: 1;
+      }
+      .card .img {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .card .img img {
+        width: 100%;
+      }
+      .card p {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #aaa;
+        font-size: 18px;
+        text-transform: capitalize;
+      }
+      .card span {
+        font-size: 15px;
+      }
+      @media (max-width: 720px) {
+        .card {
+          padding: 0 5px;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="menu" id="menu">
+        <!-- print js -->
+      </div>
+      <!-- card section -->
+      <div class="card-container" id="cardContainer">
+        <!-- print js -->
+      </div>
+    </div>
+    <script>
+      const menuData = [
+        {
+          title: "menu1",
+          product: [
+            { src: "images/frame1.png", name: "americano", price: 6000 },
+            { src: "images/frame2.png", name: "cafe latte", price: 6500 },
+            { src: "images/frame3.png", name: "vanilla latte", price: 7000 },
+          ],
+        },
+        {
+          title: "menu2",
+          product: [
+            { src: "images/frame3.png", name: "cafe latte", price: 6500 },
+            { src: "images/frame4.png", name: "chocolate", price: 5000 },
+            { src: "images/frame1.png", name: "americano", price: 6000 },
+          ],
+        },
+        {
+          title: "menu3",
+          product: [
+            { src: "images/frame5.png", name: "cafe latte", price: 6500 },
+            { src: "images/frame3.png", name: "chocolate", price: 5000 },
+            { src: "images/frame2.png", name: "americano", price: 6000 },
+          ],
+        },
+      ];
+      const menu = document.querySelector("#menu");
+      const cardContainer = document.querySelector("#cardContainer");
+
+      // console.log(menuData);
+
+      // tab menu
+      // menu.innerHTML = menuData.map().join("")
+      menu.innerHTML = menuData
+        .map((item, index) => {
+          return `<div class="menu-item ${index === 0 ? "on" : ""}">${item.title}</div>`;
+        })
+        .join("");
+
+      // tab content
+      // double mapping
+      cardContainer.innerHTML = menuData
+        .map((item, index) => {
+          return `
+            <ul class="card ${index === 0 ? "on" : ""}">
+              ${item.product
+                .map((product) => {
+                  return `
+                  <li>
+                    <div class="img">
+                      <img src="${product.src}" alt="product" />
+                    </div>
+                    <p>${product.name}</p>
+                    <span>${product.price.toLocaleString()}</span>
+                  </li>
+                `;
+                })
+                .join("")}
+            </ul>
+          `;
+        })
+        .join("");
+
+      // click event
+      const menuEl = document.querySelectorAll(".menu-item");
+      const cntEl = document.querySelectorAll(".card");
+      // menuEl.forEach((menu, index) => {
+      //   menu.addEventListener("click", () => {
+      //     menuEl.forEach((m) => {
+      //       m.classList.remove("on");
+      //     });
+      //     menu.classList.add("on");
+      //     cntEl.forEach((c) => {
+      //       c.classList.remove("on");
+      //     });
+      //     cntEl[index].classList.add("on");
+      //   });
+      // });
+
+      function showCard(index) {
+        // reset
+        menuEl.forEach((m) => {
+          m.classList.remove("on");
+        });
+        cntEl.forEach((c) => {
+          c.classList.remove("on");
+        });
+        // active
+        menuEl[index].classList.add("on");
+        cntEl[index].classList.add("on");
+      }
+      menuEl.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          showCard(index);
+        });
+      });
+    </script>
+  </body>
+</html>
