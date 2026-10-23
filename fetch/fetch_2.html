@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #result {
+        max-width: 720px;
+        margin: 100px auto;
+        display: flex;
+        gap: 10px;
+      }
+      .product {
+        flex: 1;
+        padding: 0px 20px;
+        border: 1px solid #cdd1d5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      fetch("product.json")
+        .then((res) => {
+          console.log(res);
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          // const htmlEl = data.map().join('')
+          // result.innerHTML = htmlEl
+          // const result = document.querySelector('#result');
+          // result.innderHTML = data.map((item)=>{...})
+
+          // const htmlEl = data
+          //   .map((item) => {
+          //     const result = document.querySelector("#result");
+          //     result.innerHTML += `
+          //     <div class="product">
+          //       <p>${item.name}</p>
+          //       <p>${item.price}</p>
+          //     </div>
+          //   `;
+          //   })
+          //   .join("");
+
+          const result = document.querySelector("#result");
+          result.innerHTML = data
+            .map((item) => {
+              return `
+              <div class="product">
+                <h3>${item.name}</h3>  
+                <p>${item.price.toLocaleString()}</p>
+              </div>
+              `;
+            })
+            .join("");
+        })
+        .catch((err) => {});
+    </script>
+  </body>
+</html>

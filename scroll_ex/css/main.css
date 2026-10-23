@@ -40,7 +40,7 @@ section {
   gap: 5px;
   position: fixed;
   top: 50%;
-  right: 10px;
+  right: 20px;
   z-index: 9;
   background-color: #f4f5f680;
   padding: 16px 12px;
@@ -60,4 +60,31 @@ section {
 .dot.on,
 .dot:hover {
   background-color: #fafcffc0;
+}
+
+#goTop {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  border: none;
+  background: #ffffff80;
+  border-radius: 100%;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 8px #bcbdc040;
+  opacity: 0;
+  visibility: hidden;
+}
+#goTop:hover {
+  background-color: #ffffff90;
+  transform: translateY(-5px);
+}
+#goTop.on {
+  opacity: 1;
+  visibility: visible;
 }

@@ -13,4 +13,19 @@ window.addEventListener("scroll", () => {
       dots[index].classList.add("on");
     }
   });
+
+  // go top
+  const gotopBtn = document.querySelector("#goTop");
+  let positionY = document.documentElement.scrollTop;
+
+  if (positionY > 500) {
+    gotopBtn.classList.add("on");
+  } else {
+    gotopBtn.classList.remove("on");
+  }
+  gotopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
 });
